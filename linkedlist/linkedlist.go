@@ -37,7 +37,7 @@ func NewLinkedList[T comparable]() *LinkedList[T] {
 	return &LinkedList[T]{head: nil, tail: nil}
 }
 
-// Append agrega un nuevo nodo, con el valor recibido, al final de la lista
+// Append: agrega un nuevo nodo, con el valor recibido, al final de la lista
 // O(1)
 func (l *LinkedList[T]) Append(value T) {
 	newNode := newNode(value)
@@ -50,7 +50,7 @@ func (l *LinkedList[T]) Append(value T) {
 	l.tail = newNode
 }
 
-// Prepend agrega un nuevo nodo, con el valor recibido,
+// Prepend: agrega un nuevo nodo, con el valor recibido,
 // al inicio de la lista
 // O(1)
 func (l *LinkedList[T]) Prepend(value T) {
@@ -64,7 +64,7 @@ func (l *LinkedList[T]) Prepend(value T) {
 	l.head = newNode
 }
 
-// InsertAt agrega un nuevo nodo, con el valor recibido,
+// InsertAt: agrega un nuevo nodo, con el valor recibido,
 // en la posición recibida.
 // Si la posición es inválida, no hace nada
 // O(n)
@@ -89,7 +89,7 @@ func (l *LinkedList[T]) InsertAt(value T, position int) {
 	current.next = newNode
 }
 
-// Remove elimina el primer nodo que contenga el valor recibido
+// Remove: elimina el primer nodo que contenga el valor recibido
 // O(n)
 func (l *LinkedList[T]) Remove(value T) {
 	if l.head == nil {
@@ -109,7 +109,7 @@ func (l *LinkedList[T]) Remove(value T) {
 	}
 }
 
-// String devuelve una representación en cadena de la lista
+// String: devuelve una representación en cadena de la lista
 // en el formato [1 2 3].
 // Se puede usar para imprimir la lista con fmt.Println
 // O(n)
@@ -130,7 +130,7 @@ func (l *LinkedList[T]) String() string {
 	return result
 }
 
-// Search busca el primer nodo que contenga el valor recibido
+// Search: busca el primer nodo que contenga el valor recibido
 // y devuelve su posición en la lista o -1 si no lo encuentra
 // O(n)
 func (l *LinkedList[T]) Search(value T) int {
@@ -149,7 +149,7 @@ func (l *LinkedList[T]) Search(value T) int {
 	return -1
 }
 
-// Get devuelve el valor del nodo en la posición recibida
+// Get: devuelve el valor del nodo en la posición recibida
 // o un valor nulo si la posición es inválida
 // O(n)
 func (l *LinkedList[T]) Get(position int) (T, error) {
@@ -169,7 +169,7 @@ func (l *LinkedList[T]) Get(position int) (T, error) {
 	return current.value, nil
 }
 
-// Size devuelve la cantidad de nodos en la lista
+// Size: devuelve la cantidad de nodos en la lista
 // O(n)
 func (l *LinkedList[T]) Size() int {
 	if l.head == nil {
